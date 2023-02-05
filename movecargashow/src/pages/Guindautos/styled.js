@@ -28,7 +28,7 @@ export const Container = styled.div`
 			left: 50%;
 			width: 3rem;
 			height: 3rem;
-			border: 10px solid #700308;
+			border: 5px solid #700308;
 			border-bottom-color: #fff;
 			margin-bottom: 3rem;
 			border-radius: 50%;
