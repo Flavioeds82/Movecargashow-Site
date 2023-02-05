@@ -1,15 +1,24 @@
 import React,{useState, useEffect} from 'react'
 import { Container } from './styled'
 import api from '../../api'
+import Modal from '../../components/Modal'
 
 export default function Guindastes() {
 
   const [models, setModels] = useState([])
 	const [makers, setMakers] = useState([])
-	const [show, setShow] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [name, setName] = useState('')
   const [logo, setLogo] = useState('')
+  const [openModal, setOpenModal] = useState(false)
+  
+
+  async function getCranes(maker) {
+		setLoading(true)
+		const res = await api.getCranes(maker)
+		setModels(res)
+		setLoading(false)
+		setOpenModal(true)
+	}
   
 
   async function getNames() {
@@ -33,14 +42,30 @@ export default function Guindastes() {
         }
         <div className="items">
             {!loading &&
-            makers.map((elem) => (
-              <div className="item">
-                <img src={elem.logo} alt="" />
-                <h3>{elem.name}</h3>
+            makers.map((maker) => (
+              <div className="item" onClick={() => {
+								getCranes(maker.name)
+								setLogo(maker.logo)
+							}}>
+                <img src={maker.logo} alt="" />
+                <h3>{maker.name}</h3>
+                
               </div> 
             ))
           }
         </div>
+        <Modal isOpen={openModal} setIsOpen={()=> setOpenModal(!openModal)}>
+          <div className="container-modal">
+            <img src={logo} alt="logo" />
+            <div className="modal-item" >
+              {models.map((model) => (
+                <a href={model.url} target='_blank'>{model.model}</a>
+              ))
+              }
+            </div>
+          </div>
+          
+        </Modal>
       </main>
       
     </Container>

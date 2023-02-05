@@ -16,7 +16,7 @@ export const Container = styled.header`
 		margin-left: 2rem;
 
 		img {
-			width: 30%;
+			width: 5rem;
 			margin-left: 10%;
 		}
 		
