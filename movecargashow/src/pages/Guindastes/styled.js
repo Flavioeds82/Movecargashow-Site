@@ -36,7 +36,7 @@ export const Container = styled.div`
 				}
 				100% {
 					transform: rotate(360deg);
-					border-bottom-color: #11f411;
+					border-bottom-color: #11f4f4;
 				}
 			}
 		}

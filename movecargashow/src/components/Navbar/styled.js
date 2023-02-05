@@ -7,9 +7,8 @@ export const Container = styled.header`
 	justify-content: space-around;
 	align-items: center;
 	padding: 1rem 2rem;
-	background-color: #FFF;
+	background-color: transparent;
 	font-size: 1.2rem;
-	/* position: fixed; */
 
 	.logo {
 		width: 25%;
