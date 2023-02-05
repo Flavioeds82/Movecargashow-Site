@@ -11,7 +11,6 @@ export default function Navbar() {
         <Link className='menu-item' to='/'>
           <img src={logo} alt="logo movecargashow" />
         </Link>
-        <figcaption>"Movendo o Mundo, uma carga de cada vez"</figcaption>
       </figure>
       <nav className="menu">
         <Link className='menu-item' to='/'>Home</Link>

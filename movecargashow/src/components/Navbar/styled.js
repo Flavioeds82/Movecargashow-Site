@@ -7,9 +7,9 @@ export const Container = styled.header`
 	justify-content: space-around;
 	align-items: center;
 	padding: 1rem 2rem;
-	background-color: transparent;
+	background-color: #FFF;
 	font-size: 1.2rem;
-	position: fixed;
+	/* position: fixed; */
 
 	.logo {
 		width: 25%;
@@ -20,13 +20,7 @@ export const Container = styled.header`
 			width: 30%;
 			margin-left: 10%;
 		}
-		figcaption {
-			width: 50%;
-			font-size: 1rem;
-			color: #700209;
-			font-weight: bold;
-			text-align: center;
-		}
+		
 	}
 	.menu {
 		display: flex;
@@ -41,6 +35,7 @@ export const Container = styled.header`
 		}
 		.menu-item:hover {
 			color: #944444;
+			transform: scale(1.1);
 		}
 	}
 `

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.main`
 	width: 100%;
-	height: 100%;
+	min-height: 100vh;
 
 	.right {
 		position: absolute;
@@ -18,7 +18,7 @@ export const Container = styled.main`
 		position: absolute;
 		width: 25%;
 		left: 5%;
-		top: 55%;
+		top: 40%;
 		font-size: 1.5rem;
 		font-weight: bold;
 		color: #700209;
