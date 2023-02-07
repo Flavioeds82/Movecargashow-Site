@@ -5,7 +5,7 @@ Airtable.configure({
 	apiKey: 'keybtZtPemMedniMI',
 })
 
-const baseCrane = Airtable.base('app3VtC3pFmGk5fNg') // base dos guindastes //
+const baseCranes = Airtable.base('app3VtC3pFmGk5fNg') // base dos guindastes //
 const baseTruckCranes = Airtable.base('appbE2NaN0QyeaGm3') // base guindautos //
 const baseTools = Airtable.base('appBJIFayhMINjtLu') // base ferramentas //
 
@@ -16,28 +16,25 @@ export default {
 		try {
 			const list = []
 
-			// Obtém a primeira página de registros de forma assíncrona
-			const records = await baseCrane(model)
+			await baseCranes(model)
 				.select({
 					view: 'Grid view',
 				})
-				.firstPage()
+				.eachPage((records, fetchNextPage) => {
+					for (const record of records) {
+						const data = {
+							model: record.get('MODELOS'),
+							url: record.get('GRAFICOS'),
+						}
+						list.push(data)
+					}
+					fetchNextPage()
+				})
 
-			// Adiciona cada registro à lista
-			for (const record of records) {
-				const data = {
-					id: record.id,
-					model: record.get('MODELOS'),
-					url: record.get('GRAFICOS'),
-					isFavorite: false,
-				}
-				list.push(data)
-			}
-
-			// Retorna a lista completa
 			return list
 		} catch (err) {
-			console.log(err)
+			console.error(err)
+			return null
 		}
 	},
 
@@ -46,7 +43,7 @@ export default {
 			const list = []
 
 			// Obtém a primeira página de registros de forma assíncrona
-			const records = await baseCrane('NAMES')
+			const records = await baseCranes('NAMES')
 				.select({
 					view: 'Grid view',
 				})
@@ -71,28 +68,25 @@ export default {
 		try {
 			const list = []
 
-			// Obtém a primeira página de registros de forma assíncrona
-			const records = await baseTruckCranes(model)
+			await baseTruckCranes(model)
 				.select({
 					view: 'Grid view',
 				})
-				.firstPage()
+				.eachPage((records, fetchNextPage) => {
+					for (const record of records) {
+						const data = {
+							model: record.get('MODELOS'),
+							url: record.get('GRAFICOS'),
+						}
+						list.push(data)
+					}
+					fetchNextPage()
+				})
 
-			// Adiciona cada registro à lista
-			for (const record of records) {
-				const data = {
-					id: record.id,
-					model: record.get('MODELOS'),
-					url: record.get('GRAFICOS'),
-					isFavorite: false,
-				}
-				list.push(data)
-			}
-
-			// Retorna a lista completa
 			return list
 		} catch (err) {
-			console.log(err)
+			console.error(err)
+			return null
 		}
 	},
 
@@ -128,28 +122,26 @@ export default {
 		try {
 			const list = []
 
-			// Obtém a primeira página de registros de forma assíncrona
-			const records = await baseTools(model)
+			await baseTools(model)
 				.select({
 					view: 'Grid view',
 				})
-				.firstPage()
+				.eachPage((records, fetchNextPage) => {
+					for (const record of records) {
+						const data = {
+							name: record.get('CATALOGOS'),
+							url: record.get('GRAFICOS'),
+							logo: record.get('LOGO'),
+						}
+						list.push(data)
+					}
+					fetchNextPage()
+				})
 
-			// Adiciona cada registro à lista
-			for (const record of records) {
-				const data = {
-					id: record.id,
-					name: record.get('CATALOGOS'),
-					url: record.get('GRAFICOS'),
-					logo: record.get('LOGO'),
-				}
-				list.push(data)
-			}
-
-			// Retorna a lista completa
 			return list
 		} catch (err) {
-			console.log(err)
+			console.error(err)
+			return null
 		}
 	},
 

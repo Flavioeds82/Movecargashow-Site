@@ -17,7 +17,7 @@ export default function Navbar() {
         <Link className='menu-item' to='guindastes'>Guindastes</Link>
         <Link className='menu-item' to='guindautos'>Guindautos | Munck</Link>
         <Link className='menu-item' to='acessorios'>Acessórios</Link>
-        <Link className='menu-item' to='contato'>Contato</Link>
+        <a  className='menu-item' href="https://form.jotform.com/222773977366068" target='_blank'>Contato</a>
       </nav>
       
           
