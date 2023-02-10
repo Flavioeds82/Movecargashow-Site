@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react'
 import { Container } from './styled'
 import api from '../../api'
 import Modal from '../../components/Modal'
+import GoogleAnalytics from '../../GoogleAnalytics'
 
 export default function Guindautos() {
 
@@ -34,7 +35,7 @@ export default function Guindautos() {
 
   return (
     <Container>
-      
+      <GoogleAnalytics/>
       <main>
         <h1>Tabelas de Guindautos / Muncks</h1>
         {loading &&

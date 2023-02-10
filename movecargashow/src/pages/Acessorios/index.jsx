@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { Container } from './styled'
 import api from '../../api'
 import Modal from '../../components/Modal'
+import GoogleAnalytics from '../../GoogleAnalytics'
 
 export default function Acessorios() {
 
@@ -45,7 +46,7 @@ export default function Acessorios() {
 
   return (
     <Container>
-      
+      <GoogleAnalytics/>
       <main>
         <h1>Tabelas de Acessórios</h1>
         {loading &&

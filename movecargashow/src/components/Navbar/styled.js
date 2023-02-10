@@ -16,16 +16,16 @@ export const Container = styled.header`
 		margin-left: 2rem;
 
 		img {
-			width: 5rem;
+			width: 4rem;
 			margin-left: 10%;
 		}
-		
 	}
 	.menu {
 		display: flex;
 		width: 70%;
 		justify-content: space-around;
 		align-items: center;
+
 
 		.menu-item {
 			font-weight: bold;
@@ -35,6 +35,50 @@ export const Container = styled.header`
 		.menu-item:hover {
 			color: #944444;
 			transform: scale(1.1);
+		}
+	}
+
+	.hamburguer {
+		display: none;
+
+		.menu-icon {
+			text-align: right;
+		}
+		.menu-mobile {
+			display: flex;
+			flex-direction: column;
+			/* text-align: center; */
+			background-color: rgba(255,255,255,0.9);
+			padding: 2rem 1rem;
+			border-radius: 5px;
+
+			.menu-item {
+				font-weight: bold;
+				text-decoration: none;
+				color: #700209;
+				margin-bottom: 1rem;
+			}
+		}
+		.menu-item:hover {
+			color: #944444;
+			transform: scale(1.1);
+		}
+	}
+
+	@media (max-width: 900px) {
+		.logo {
+			position: absolute;
+			top: 5px;
+			left: 0px;
+		}
+		.menu {
+			display: none;
+		}
+		.hamburguer {
+			display: block;
+			position: absolute;
+			top: 10px;
+			right: 50px;
 		}
 	}
 `

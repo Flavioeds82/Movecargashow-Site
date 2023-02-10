@@ -56,4 +56,23 @@ export const Container = styled.footer`
 			}
 		}
 	}
+
+	//----------------------- @MEDIA -----------------------//
+
+	@media (max-width: 900px) {
+		flex-direction: column;
+
+		.footer-left {
+			.menu {
+				align-items: center;
+				margin-bottom: 1rem;
+			}
+		}
+		.footer-center {
+			figure {
+				margin-bottom: 1rem;
+			}
+			margin-bottom: 1rem;
+		}
+	}
 `

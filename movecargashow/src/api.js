@@ -75,7 +75,7 @@ export default {
 				.eachPage((records, fetchNextPage) => {
 					for (const record of records) {
 						const data = {
-							model: record.get('MODELOS'),
+							model: record.get('MODELOS').replace('.pdf',''),
 							url: record.get('GRAFICOS'),
 						}
 						list.push(data)

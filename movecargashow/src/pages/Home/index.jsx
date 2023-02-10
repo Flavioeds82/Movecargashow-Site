@@ -1,15 +1,20 @@
 import React from 'react'
-import {Container} from './styled'
+import { Container } from './styled'
+import Blog from '../../components/Blog'
+import GoogleAnalytics from '../../GoogleAnalytics'
+import {Banner, BannerNative} from '../../components/Banners'
+
+
+
 
 export default function Home() {
   return (
     <Container>
-      <div className="right">
-        Gráficos, Tabelas e Dicas sobre movimentação de carga, tudo em um só lugar !!!
-      </div>
-      <div className="left">
-       Baixem nosso aplicativo na GooglePlay
-      </div>
+      <GoogleAnalytics/>
+      <main className="main">
+      </main>
+      <Banner />
+      <BannerNative/>
     </Container>
   )
 }

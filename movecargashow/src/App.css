@@ -12,7 +12,7 @@ body{
 .App{
    width: 100%;
    min-height: 100vh;
-   background: url('./src/assets/bg.svg') center center  no-repeat fixed;
+   background: url('./bg.svg') center center  no-repeat fixed;
       -webkit-background-size: contain;
       -moz-background-size: contain;
       -o-background-size: contain;

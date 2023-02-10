@@ -91,7 +91,8 @@ export const Container = styled.div`
 			}
 			.modal-item {
 				width: 100%;
-				height: 25rem;
+				height: 22rem;
+				margin-bottom: 5rem;
 				overflow: auto;
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(5rem, 15rem));
@@ -107,7 +108,7 @@ export const Container = styled.div`
 					border: 1px solid #555;
 					border-radius: 5px;
 					padding: 5px;
-					margin-bottom: 0.5rem;
+					margin-bottom: 1rem;
 					margin-top: 0.5rem;
 					word-wrap: break-word;
 				}
