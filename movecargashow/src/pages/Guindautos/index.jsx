@@ -3,6 +3,8 @@ import { Container } from './styled'
 import api from '../../api'
 import Modal from '../../components/Modal'
 import GoogleAnalytics from '../../GoogleAnalytics'
+import { BannerNative2} from '../../components/Banners'
+
 
 export default function Guindautos() {
 
@@ -68,7 +70,9 @@ export default function Guindautos() {
           
         </Modal>
       </main>
-      
+      <div className="banner">
+        <BannerNative2/>
+        </div>
     </Container>
   )
 }

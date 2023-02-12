@@ -9,42 +9,41 @@ import Contato from './pages/Contato'
 import Politicas from './pages/Politicas'
 import Termos from './pages/Termos'
 import Error from './pages/Error'
+import { useRoutes } from 'react-router-dom';
 
-export const Routes = createBrowserRouter([
-   {
-      path: "/",
-      element: <App />,
-      errorElement: <Error/>,
-      children: [
-         {
-            path: "/",
-            element: <Home />
-         },
-         {
-            path: "/guindastes",
-            element: <Guindastes />
-         },
-         {
-            path: "guindautos",
-            element: <Guindautos />
-         },
-         {
-            path: "acessorios",
-            element: <Acessorios />
-         },
-         {
-            path: "contato",
-            element: <Contato/>
-         },
-         {
-            path: "politicas",
-            element: <Politicas/>
-         },
-         {
-            path: "termos",
-            element: <Termos/>
-         }
-      ]
-   },
-   
-])
+export default function Routes() {
+   return useRoutes([
+      {
+         path: "/",
+         element: <Home />
+      },
+      {
+         path: "/guindastes",
+         element: <Guindastes />
+      },
+      {
+         path: "guindautos",
+         element: <Guindautos />
+      },
+      {
+         path: "acessorios",
+         element: <Acessorios />
+      },
+      {
+         path: "contato",
+         element: <Contato />
+      },
+      {
+         path: "politicas",
+         element: <Politicas />
+      },
+      {
+         path: "termos",
+         element: <Termos />
+      },
+      {
+         path: '*',
+         element: <Error />
+      },
+   ])
+}

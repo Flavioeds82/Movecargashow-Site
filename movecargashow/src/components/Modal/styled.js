@@ -16,7 +16,7 @@ export const Container = styled.div`
 		top: 50%;
 		left: 50%;
 		width: 80%;
-		height: 90%;
+		height: auto;
 		background-color: #f0f0f0;
 		transform: translate(-50%, -50%);
 		text-align: center;

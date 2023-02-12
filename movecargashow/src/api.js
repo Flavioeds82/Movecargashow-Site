@@ -8,6 +8,7 @@ Airtable.configure({
 const baseCranes = Airtable.base('app3VtC3pFmGk5fNg') // base dos guindastes //
 const baseTruckCranes = Airtable.base('appbE2NaN0QyeaGm3') // base guindautos //
 const baseTools = Airtable.base('appBJIFayhMINjtLu') // base ferramentas //
+const basePosts = Airtable.base('app4UEHYulIlaG3zp') // base postagens
 
 export default {
 	//-----------------------	CRANES  --------------------------------//
@@ -75,7 +76,7 @@ export default {
 				.eachPage((records, fetchNextPage) => {
 					for (const record of records) {
 						const data = {
-							model: record.get('MODELOS').replace('.pdf',''),
+							model: record.get('MODELOS').replace('.pdf', ''),
 							url: record.get('GRAFICOS'),
 						}
 						list.push(data)
@@ -168,6 +169,36 @@ export default {
 			return list
 		} catch (err) {
 			console.log(err)
+		}
+	},
+
+	getPosts: async () => {
+		try {
+			const list = []
+
+			await basePosts('POSTAGENS')
+				.select({
+					maxRecords: 6,
+					view: 'Grid view',
+				})
+				.eachPage((records, fetchNextPage) => {
+					for (const record of records) {
+						const data = {
+							id: record.id,
+							title: record.get('TITULO'),
+							desc: record.get('TEXTO'),
+							img: record.get('IMAGEM')[0].url,
+							url: record.get('url'),
+						}
+						list.push(data)
+					}
+					fetchNextPage()
+				})
+
+			return list
+		} catch (err) {
+			console.error(err)
+			return null
 		}
 	},
 }

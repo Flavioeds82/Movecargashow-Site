@@ -1,11 +1,12 @@
 *{
    box-sizing: border-box;
    margin: 0;
-      padding: 0;
+   padding: 0;
 }
 body{
    margin: 0;
    padding: 0;
+  
    
    
 }
@@ -13,11 +14,13 @@ body{
    width: 100%;
    min-height: 100vh;
    background: url('./bg.svg') center center  no-repeat fixed;
-      -webkit-background-size: contain;
-      -moz-background-size: contain;
-      -o-background-size: contain;
-      background-size: contain;
-      object-fit: fill;
+   -webkit-background-size: contain;
+   -moz-background-size: contain;
+   -o-background-size: contain;
+   background-size: contain;
+   object-fit: fill;
+   font-family: 'roboto', Arial, Helvetica, sans-serif;
+   
    
 }
 .bg{
